@@ -1,5 +1,6 @@
 ---
 import Glitch from "../components/glitch.astro";
+import CopyIcon from "../components/copyIcon.astro";
 ---
 
 <html lang="en">
@@ -10,32 +11,46 @@ import Glitch from "../components/glitch.astro";
     <meta name="generator" content={Astro.generator} />
     <title>Try - a</title>
   </head>
-  <body class="h-screen bg-black text-gray-A11">
+  <body
+    class="h-screen bg-black text-gray-A11 selection:bg-gray-A11 selection:text-gray-2"
+  >
     <main
       class="h-full flex flex-col items-center justify-between p-6 sm:pt-32"
     >
       <div
         class="max-w-3xl mx-auto flex flex-col justify-center items-center relative"
       >
-        <div class="mt- max-w-2xl text-left">
-          <Glitch text="v1.1" />
-          <h1
-            class="before:bg-shine relative mb-8 !text-gray-A12 before:absolute before:left-0 before:top-0 before:w-full before:animate-[shine_2s_ease-in-out] before:bg-[length:200%] before:bg-clip-text before:text-transparent before:content-['The_next_generation_of_writing_emails'] before:pointer-events-none text-[38px] leading-[46px] md:text-[70px] md:leading-[85px] tracking-[-1.024px;] text-slate-12 font-bold"
-          >
-            try()
-          </h1>
+        <div class="mt- max-w-2xl text-left space-y-2">
+          <div class="flex justify-between items-end">
+            <div>
+              <Glitch text="v1.1" />
+              <h1
+                class="before:bg-shine relative !text-gray-A12 before:absolute before:left-0 before:top-0 before:w-full before:animate-[shine_2s_ease-in-out] before:bg-[length:200%] before:bg-clip-text before:text-transparent before:content-['The_next_generation_of_writing_emails'] before:pointer-events-none text-[38px] leading-[46px] md:text-[70px] md:leading-[85px] tracking-[-1.024px;] text-slate-12 font-bold"
+              >
+                try()
+              </h1>
+            </div>
+
+            <div>
+              <div>
+                <button
+                  class="bg-gradient-to-t from-gray-A3 to-gray-A5 p-2 rounded flex justify-between items-center gap-2 select-text hover:bg-gray-A2 transition-all hover:text-gray-12 shadow-inner shadow-gray-A3"
+                >
+                  <span class="select-none text-gray-A7">$</span>
+                  <pre>npm install @bdsqqq/try</pre>
+                  <div class="rounded-sm transform translate-y-px">
+                    <CopyIcon />
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
           <div class="">
             <span>
               Don't let the Try Catch Tower of Terror destroy your beautiful one
               liners.
             </span>
           </div>
-        </div>
-
-        <div>
-          <button>
-            <pre>npm install @bdsqqq/try</pre>
-          </button>
         </div>
       </div>
       <footer class="">
