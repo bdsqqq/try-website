@@ -1,6 +1,14 @@
 ---
-import Glitch from "../components/glitch.astro";
+import Glitch from "../components/Glitch.astro";
 import CopyIcon from "../components/copyIcon.astro";
+import GithubIcon from "../components/githubIcon.astro";
+import FireshipLogo from "../components/fireshipLogo.astro";
+
+import { clsx } from "clsx";
+
+const focusStyles = `
+  !outline-none focus-visible:ring-1 ring-offset-8 ring-gray-A10 ring-offset-gray-0
+`;
 ---
 
 <html lang="en">
@@ -32,9 +40,13 @@ import CopyIcon from "../components/copyIcon.astro";
             </div>
 
             <div>
-              <div>
+              <div class="flex flex-col gap-2 items-end">
                 <button
-                  class="bg-gradient-to-t from-gray-A3 to-gray-A5 p-2 rounded flex justify-between items-center gap-2 select-text hover:bg-gray-A2 transition-all hover:text-gray-12 shadow-inner shadow-gray-A3"
+                  id="copy"
+                  class={clsx(
+                    "cursor-copy bg-gradient-to-t from-gray-A3 to-gray-A5 p-2 rounded flex justify-between items-center gap-2 select-text hover:bg-gray-A2 transition-all hover:text-gray-12 hover:shadow-lg shadow-white active:scale-[98%] focus:text-gray-12",
+                    focusStyles
+                  )}
                 >
                   <span class="select-none text-gray-A7">$</span>
                   <pre>npm install @bdsqqq/try</pre>
@@ -42,6 +54,17 @@ import CopyIcon from "../components/copyIcon.astro";
                     <CopyIcon />
                   </div>
                 </button>
+                <a
+                  class={clsx(
+                    "flex items-center gap-2 hover:text-gray-12 transition-colors focus:text-gray-12 rounded",
+                    focusStyles
+                  )}
+                  href="https://github.com/bdsqqq/try"
+                >
+                  <div class="transform translate-y-px">
+                    <GithubIcon />
+                  </div> bdsqqq/try
+                </a>
               </div>
             </div>
           </div>
@@ -54,9 +77,34 @@ import CopyIcon from "../components/copyIcon.astro";
         </div>
       </div>
       <footer class="">
-        Made by <a href="">Igor Bedesqui</a>, inspired by <a href="">Fireship</a
+        Made by <a
+          class={clsx(
+            "hover:text-gray-12 focus:text-gray-12 transition-colors rounded",
+            focusStyles
+          )}
+          href="https://twitter.com/bedesqui"
+          ><img
+            class="inline-block w-4 h-4 rounded-full"
+            src="https://avatars.githubusercontent.com/u/37847523?v=4"
+            alt=""
+          /> Igor Bedesqui</a
+        >, inspired by <a
+          class={clsx(
+            "hover:text-gray-12 focus:text-gray-12 transition-colors rounded",
+            focusStyles
+          )}
+          href="https://www.youtube.com/watch?v=ITogH7lJTyE"
+          ><FireshipLogo className="inline-block w-4 h-4 rounded-full" /> Fireship</a
         >
       </footer>
     </main>
   </body>
 </html>
+<script>
+  const copy = document.querySelectorAll(".cursor-copy");
+  copy.forEach((el) => {
+    el.addEventListener("click", () => {
+      navigator.clipboard.writeText("npm install @bdsqqq/try");
+    });
+  });
+</script>
