@@ -3,11 +3,13 @@ lockfileVersion: 5.4
 specifiers:
   '@astrojs/tailwind': ^3.0.1
   astro: ^2.0.14
+  clsx: ^1.2.1
   tailwindcss: ^3.2.6
 
 dependencies:
   '@astrojs/tailwind': 3.0.1_2ld5hdfmntefznw7qnjg43xepu
   astro: 2.0.14
+  clsx: 1.2.1
   tailwindcss: 3.2.6
 
 packages:
@@ -1059,6 +1061,11 @@ packages:
   /clone/1.0.4:
     resolution: {integrity: sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg==}
     engines: {node: '>=0.8'}
+    dev: false
+
+  /clsx/1.2.1:
+    resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
+    engines: {node: '>=6'}
     dev: false
 
   /color-convert/1.9.3:
