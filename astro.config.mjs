@@ -8,7 +8,7 @@ export default defineConfig({
   markdown: {
     shikiConfig: {
       theme: "css-variables",
-      wrap: true,
+      wrap: false,
     },
   },
   integrations: [tailwind()],
