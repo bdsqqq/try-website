@@ -106,13 +106,13 @@ const { Content: Awesome } = await awesome.render();
           <div class="mx-auto max-lg:sticky top-0 z-10">
             <div class="bg-black max-lg:pt-4 w-full">
               <p class="max-w-xl mx-auto">
-                <span class="story">Async-await feels like heaven</span>
-                <span class="story"> because it avoids callback hell.</span>
-                <span class="story">
+                <span class="story transition-colors">Async-await feels like heaven</span>
+                <span class="story transition-colors"> because it avoids callback hell.</span>
+                <span class="story transition-colors">
                   But our responsibility to catch errors turned heaven into the
                   try-catch tower of terror.
                 </span>
-                <span class="story">
+                <span class="story transition-colors">
                   Try™ gives you a taste of heaven without compromising
                   functionality.
                 </span>
@@ -201,15 +201,27 @@ const { Content: Awesome } = await awesome.render();
 
   codeSnippetsArray.forEach((el, i) => {
     el.addEventListener("focus", () => {
+      storyBits.filter((_, j) => j !== i).forEach(el => {
+        el.classList.add("text-gray-8")
+      });
       storyBits[i]?.classList.add("text-gray-12");
     });
     el.addEventListener("blur", () => {
+      storyBits.filter((_, j) => j !== i).forEach(el => {
+        el.classList.remove("text-gray-8")
+      });
       storyBits[i]?.classList.remove("text-gray-12");
     });
     el.addEventListener("mouseover", () => {
+      storyBits.filter((_, j) => j !== i).forEach(el => {
+        el.classList.add("text-gray-8")
+      });
       storyBits[i]?.classList.add("text-gray-12");
     });
     el.addEventListener("mouseleave", () => {
+      storyBits.filter((_, j) => j !== i).forEach(el => {
+        el.classList.remove("text-gray-8")
+      });
       storyBits[i]?.classList.remove("text-gray-12");
     });
   });
