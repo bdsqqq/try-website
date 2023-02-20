@@ -39,77 +39,79 @@ const { Content: Awesome } = await awesome.render();
       <main
         class="max-w-3xl mx-auto flex flex-col justify-center items-center relative space-y-4"
       >
-        <div class="max-w-2xl text-left space-y-4">
-          <div class="space-y-2">
-            <div class="flex justify-between items-end">
-              <div>
-                <Glitch text="v1.1" />
-                <h1
-                  class="before:bg-shine relative text-gray-A12 text-4xl md:text-7xl leading-relaxed tracking-tighter text-slate-12 font-bold"
-                >
-                  try()
-                </h1>
-              </div>
+        <div class="max-w-xl w-full mx-auto">
+          <div class="text-left space-y-4">
+            <div class="space-y-2">
+              <div class="flex justify-between items-end">
+                <div>
+                  <Glitch text="v1.1" />
+                  <h1
+                    class="before:bg-shine relative text-gray-A12 text-4xl md:text-7xl leading-relaxed tracking-tighter text-slate-12 font-bold"
+                  >
+                    try()
+                  </h1>
+                </div>
 
-              <div>
-                <div class="flex flex-col gap-2 items-end">
-                  <button
-                    id="copy"
-                    class={clsx(
-                      "cursor-copy bg-gradient-to-t from-gray-A3 to-gray-A5 p-2 rounded hidden md:flex justify-between items-center gap-2 select-text hover:bg-gray-A2 transition-all hover:text-gray-12 hover:shadow-lg shadow-white active:scale-[98%] focus:text-gray-12",
-                      focusStyles
-                    )}
-                  >
-                    <span class="select-none text-gray-A7">$</span>
-                    <pre>npm install @bdsqqq/try</pre>
-                    <div class="rounded-sm transform translate-y-px">
-                      <CopyIcon />
-                    </div>
-                  </button>
-                  <a
-                    class={clsx(
-                      "flex items-center gap-2 hover:text-gray-12 transition-colors focus:text-gray-12 rounded",
-                      focusStyles
-                    )}
-                    href="https://github.com/bdsqqq/try"
-                  >
-                    <div class="transform translate-y-px">
-                      <GithubIcon />
-                    </div> bdsqqq/try
-                  </a>
+                <div>
+                  <div class="flex flex-col gap-2 items-end">
+                    <button
+                      id="copy"
+                      class={clsx(
+                        "cursor-copy bg-gradient-to-t from-gray-A3 to-gray-A5 p-2 rounded hidden md:flex justify-between items-center gap-2 select-text hover:bg-gray-A2 transition-all hover:text-gray-12 hover:shadow-lg shadow-white active:scale-[98%] focus:text-gray-12",
+                        focusStyles
+                      )}
+                    >
+                      <span class="select-none text-gray-A7">$</span>
+                      <pre>npm install @bdsqqq/try</pre>
+                      <div class="rounded-sm transform translate-y-px">
+                        <CopyIcon />
+                      </div>
+                    </button>
+                    <a
+                      class={clsx(
+                        "flex items-center gap-2 hover:text-gray-12 transition-colors focus:text-gray-12 rounded",
+                        focusStyles
+                      )}
+                      href="https://github.com/bdsqqq/try"
+                    >
+                      <div class="transform translate-y-px">
+                        <GithubIcon />
+                      </div> bdsqqq/try
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div>
-              <span>
-                Don't let the Try Catch Tower of Terror destroy your beautiful
-                one liners.
-              </span>
-            </div>
-          </div>
-
-          <div class="flex justify-center mt-4 md:hidden">
-            <button
-              id="copy"
-              class={clsx(
-                "cursor-copy bg-gradient-to-t from-gray-A3 to-gray-A5 p-2 rounded flex justify-between items-center gap-2 select-text hover:bg-gray-A2 transition-all hover:text-gray-12 hover:shadow-lg shadow-white active:scale-[98%] focus:text-gray-12",
-                focusStyles
-              )}
-            >
-              <span class="select-none text-gray-A7">$</span>
-              <pre>npm install @bdsqqq/try</pre>
-              <div class="rounded-sm transform translate-y-px">
-                <CopyIcon />
+              <div>
+                <span>
+                  Don't let the Try Catch Tower of Terror destroy your beautiful
+                  one liners.
+                </span>
               </div>
-            </button>
+            </div>
+
+            <div class="flex justify-center mt-4 md:hidden">
+              <button
+                id="copy"
+                class={clsx(
+                  "cursor-copy bg-gradient-to-t from-gray-A3 to-gray-A5 p-2 rounded flex justify-between items-center gap-2 select-text hover:bg-gray-A2 transition-all hover:text-gray-12 hover:shadow-lg shadow-white active:scale-[98%] focus:text-gray-12",
+                  focusStyles
+                )}
+              >
+                <span class="select-none text-gray-A7">$</span>
+                <pre>npm install @bdsqqq/try</pre>
+                <div class="rounded-sm transform translate-y-px">
+                  <CopyIcon />
+                </div>
+              </button>
+            </div>
           </div>
         </div>
 
         <div class="w-full mx-auto space-y-4">
           <div class="mx-auto sticky top-0 z-10">
             <div class="bg-black pt-2 w-full">
-              <p class="max-w-lg mx-auto">
+              <p class="max-w-xl mx-auto">
                 <span class="story"
                   >Long ago, our asyncronous code built the pyramids of hell.</span
                 >
