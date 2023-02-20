@@ -88,52 +88,58 @@ const { Content: Awesome } = await awesome.render();
         </div>
 
         <div class="w-full mx-auto space-y-4">
-          <div class="max-w-lg mx-auto">
-            <p>
-              <span class="story"
-                >Long ago, our asyncronous code built the pyramids of hell.</span
-              >
-              <span class="story">
-                The heavenly one-liners destroyed those monuments and saved our
-                sanity.
-              </span>
-              <span class="story">
-                But our responsibility to catch errors turned heaven into the
-                try-catch tower of terror.
-              </span>
-              <span class="story">
-                Try™ gives you a taste of heaven without compromising
-                functionality. (typesafelly, of course.)
-              </span>
-            </p>
+          <div class="mx-auto sticky top-0 z-10">
+            <div class="bg-black pt-2 w-full">
+              <p class="max-w-lg">
+                <span class="story"
+                  >Long ago, our asyncronous code built the pyramids of hell.</span
+                >
+                <span class="story">
+                  The heavenly one-liners destroyed those monuments and saved
+                  our sanity.
+                </span>
+                <span class="story">
+                  But our responsibility to catch errors turned heaven into the
+                  try-catch tower of terror.
+                </span>
+                <span class="story">
+                  Try™ gives you a taste of heaven without compromising
+                  functionality. (typesafelly, of course.)
+                </span>
+              </p>
+            </div>
+            <div
+              class="bg-gradient-to-b from-black to-transparent h-8 -mb-4 lg:hidden"
+            >
+            </div>
           </div>
 
-          <div class="w-full overflow-x-visible">
-            <div class="flex group pointer-events-none">
+          <div class="w-full lg:overflow-x-visible">
+            <div class="flex max-lg:flex-col group pointer-events-none">
               <div
                 tabindex="0"
-                class="code-card transform group-hover:opacity-75 group-focus-within:opacity-75 group-focus-within:blur-sm group-hover:blur-sm focus:!blur-none hover:!blur-none filter focus:!opacity-100 hover:!opacity-100 pointer-events-auto h-fit min-w-96 [&:not(:first-child)]:-ml-32 transition-all"
+                class="code-card transform group-hover:opacity-75 group-focus-within:opacity-75 group-focus-within:blur-sm group-hover:blur-sm focus:!blur-none hover:!blur-none filter focus:!opacity-100 hover:!opacity-100 pointer-events-auto h-fit max-lg:max-w-[calc(100vw_-_3rem)] lg:min-w-96 max-lg:[&:not(:first-child)]:-mt-16 lg:[&:not(:first-child)]:-ml-32 transition-all"
               >
                 <Pyramid />
               </div>
 
               <div
                 tabindex="0"
-                class="code-card transform group-hover:opacity-75 group-focus-within:opacity-75 group-focus-within:blur-sm group-hover:blur-sm focus:!blur-none hover:!blur-none filter focus:!opacity-100 hover:!opacity-100 pointer-events-auto h-fit min-w-96 [&:not(:first-child)]:-ml-32 transition-all"
+                class="code-card transform group-hover:opacity-75 group-focus-within:opacity-75 group-focus-within:blur-sm group-hover:blur-sm focus:!blur-none hover:!blur-none filter focus:!opacity-100 hover:!opacity-100 pointer-events-auto h-fit max-lg:max-w-[calc(100vw_-_3rem)] lg:min-w-96 max-lg:[&:not(:first-child)]:-mt-16 lg:[&:not(:first-child)]:-ml-32 transition-all"
               >
                 <Heaven />
               </div>
 
               <div
                 tabindex="0"
-                class="code-card transform group-hover:opacity-75 group-focus-within:opacity-75 group-focus-within:blur-sm group-hover:blur-sm focus:!blur-none hover:!blur-none filter focus:!opacity-100 hover:!opacity-100 pointer-events-auto h-fit min-w-96 [&:not(:first-child)]:-ml-32 transition-all"
+                class="code-card transform group-hover:opacity-75 group-focus-within:opacity-75 group-focus-within:blur-sm group-hover:blur-sm focus:!blur-none hover:!blur-none filter focus:!opacity-100 hover:!opacity-100 pointer-events-auto h-fit max-lg:max-w-[calc(100vw_-_3rem)] lg:min-w-96 max-lg:[&:not(:first-child)]:-mt-16 lg:[&:not(:first-child)]:-ml-32 transition-all"
               >
                 <Terror />
               </div>
 
               <div
                 tabindex="0"
-                class="code-card transform group-hover:opacity-75 group-focus-within:opacity-75 group-focus-within:blur-sm group-hover:blur-sm focus:!blur-none hover:!blur-none filter focus:!opacity-100 hover:!opacity-100 pointer-events-auto h-fit min-w-96 [&:not(:first-child)]:-ml-32 transition-all"
+                class="code-card transform group-hover:opacity-75 group-focus-within:opacity-75 group-focus-within:blur-sm group-hover:blur-sm focus:!blur-none hover:!blur-none filter focus:!opacity-100 hover:!opacity-100 pointer-events-auto h-fit max-lg:max-w-[calc(100vw_-_3rem)] lg:min-w-96 max-lg:[&:not(:first-child)]:-mt-16 lg:[&:not(:first-child)]:-ml-32 transition-all"
               >
                 <Awesome />
               </div>
@@ -141,7 +147,7 @@ const { Content: Awesome } = await awesome.render();
           </div>
         </div>
       </main>
-      <footer class="">
+      <footer class="relative z-10">
         Made by <a
           class={clsx(
             "hover:text-gray-12 focus:text-gray-12 transition-colors rounded",
@@ -213,9 +219,9 @@ const { Content: Awesome } = await awesome.render();
   }
 
   .code-card:hover ~ .code-card {
-    @apply translate-x-36;
+    @apply max-lg:translate-y-20 lg:translate-x-36;
   }
   .code-card:focus-within ~ .code-card {
-    @apply translate-x-36;
+    @apply max-lg:translate-y-20 lg:translate-x-36;
   }
 </style>
