@@ -1,13 +1,13 @@
 ---
 import Glitch from "../components/glitch.astro";
-import CopyIcon from "../components/copyIcon.astro";
 import GithubIcon from "../components/githubIcon.astro";
 import FireshipLogo from "../components/fireshipLogo.astro";
+import CopyButton from "../components/copyButton.astro";
 
 import { clsx } from "clsx";
 import { getEntryBySlug } from "astro:content";
 
-const focusStyles = `
+export const focusStyles = `
   !outline-none focus-visible:ring-1 ring-offset-8 ring-gray-A10 ring-offset-gray-0
 `;
 
@@ -54,19 +54,7 @@ const { Content: Awesome } = await awesome.render();
 
                 <div>
                   <div class="flex flex-col gap-2 items-end">
-                    <button
-                      id="copy"
-                      class={clsx(
-                        "cursor-copy bg-gradient-to-t from-gray-A3 to-gray-A5 p-2 rounded hidden md:flex justify-between items-center gap-2 select-text hover:bg-gray-A2 transition-all hover:text-gray-12 hover:shadow-lg shadow-white active:scale-[98%] focus:text-gray-12",
-                        focusStyles
-                      )}
-                    >
-                      <span class="select-none text-gray-A7">$</span>
-                      <pre>npm install @bdsqqq/try</pre>
-                      <div class="rounded-sm transform translate-y-px">
-                        <CopyIcon />
-                      </div>
-                    </button>
+                    <CopyButton />
                     <a
                       class={clsx(
                         "flex items-center gap-2 hover:text-gray-12 transition-colors focus:text-gray-12 rounded",
@@ -91,19 +79,7 @@ const { Content: Awesome } = await awesome.render();
             </div>
 
             <div class="flex justify-center mt-4 md:hidden">
-              <button
-                id="copy"
-                class={clsx(
-                  "cursor-copy bg-gradient-to-t from-gray-A3 to-gray-A5 p-2 rounded flex justify-between items-center gap-2 select-text hover:bg-gray-A2 transition-all hover:text-gray-12 hover:shadow-lg shadow-white active:scale-[98%] focus:text-gray-12",
-                  focusStyles
-                )}
-              >
-                <span class="select-none text-gray-A7">$</span>
-                <pre>npm install @bdsqqq/try</pre>
-                <div class="rounded-sm transform translate-y-px">
-                  <CopyIcon />
-                </div>
-              </button>
+              <CopyButton />
             </div>
           </div>
         </div>
@@ -200,13 +176,6 @@ const { Content: Awesome } = await awesome.render();
   </body>
 </html>
 <script>
-  const copy = document.querySelectorAll(".cursor-copy");
-  copy.forEach((el) => {
-    el.addEventListener("click", () => {
-      navigator.clipboard.writeText("npm install @bdsqqq/try");
-    });
-  });
-
   const story = document.querySelectorAll(".story");
   const storyBits = Array.from(story);
   const codeSnippets = document.querySelectorAll(".code-card");
