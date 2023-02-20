@@ -90,18 +90,18 @@ const { Content: Awesome } = await awesome.render();
         <div class="w-full mx-auto space-y-4">
           <div class="max-w-lg mx-auto">
             <p>
-              <span
+              <span class="story"
                 >Long ago, our asyncronous code built the pyramids of hell.</span
               >
-              <span>
+              <span class="story">
                 The heavenly one-liners destroyed those monuments and saved our
                 sanity.
               </span>
-              <span>
+              <span class="story">
                 But our responsibility to catch errors turned heaven into the
                 try-catch tower of terror.
               </span>
-              <span>
+              <span class="story">
                 Try™ gives you a taste of heaven without compromising
                 functionality. (typesafelly, of course.)
               </span>
@@ -170,6 +170,26 @@ const { Content: Awesome } = await awesome.render();
   copy.forEach((el) => {
     el.addEventListener("click", () => {
       navigator.clipboard.writeText("npm install @bdsqqq/try");
+    });
+  });
+
+  const story = document.querySelectorAll(".story");
+  const storyBits = Array.from(story);
+  const codeSnippets = document.querySelectorAll(".code-card");
+  const codeSnippetsArray = Array.from(codeSnippets);
+
+  codeSnippetsArray.forEach((el, i) => {
+    el.addEventListener("focus", () => {
+      storyBits[i]?.classList.add("text-gray-12");
+    });
+    el.addEventListener("blur", () => {
+      storyBits[i]?.classList.remove("text-gray-12");
+    });
+    el.addEventListener("mouseover", () => {
+      storyBits[i]?.classList.add("text-gray-12");
+    });
+    el.addEventListener("mouseleave", () => {
+      storyBits[i]?.classList.remove("text-gray-12");
     });
   });
 </script>
