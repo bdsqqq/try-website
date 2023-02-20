@@ -1,13 +1,5 @@
 ```js
-async function awesome(){
-   const [aData, aError] = await tryCatch(step1());
-   const [bData, bError] = await tryCatch(step2(aData));
-   const [cData, cError] = await tryCatch(step3(bData));
-
-   // ...
-}
-
-async function awesomeButHandleErrors() {
+async function awesome() {
    const [aData, aError] = await tryCatch(step1());
    if(aError) // ...
 
