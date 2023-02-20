@@ -5,10 +5,14 @@ import GithubIcon from "../components/githubIcon.astro";
 import FireshipLogo from "../components/fireshipLogo.astro";
 
 import { clsx } from "clsx";
+import { getEntryBySlug } from "astro:content";
 
 const focusStyles = `
   !outline-none focus-visible:ring-1 ring-offset-8 ring-gray-A10 ring-offset-gray-0
 `;
+
+const terror = await getEntryBySlug("codesnippets", "tower-of-terror");
+const { Content } = await terror.render();
 ---
 
 <html lang="en">
@@ -74,6 +78,9 @@ const focusStyles = `
               liners.
             </span>
           </div>
+          <div class="">
+            <Content />
+          </div>
         </div>
       </div>
       <footer class="">
@@ -108,3 +115,22 @@ const focusStyles = `
     });
   });
 </script>
+<style is:global>
+  :root {
+    --astro-code-color-text: var(--color-gray-9);
+    --astro-code-color-background: var(--color-gray-1);
+    --astro-code-token-constant: var(--color-gray-12);
+    --astro-code-token-string: var(--color-gray-11);
+    --astro-code-token-comment: var(--color-gray-A7);
+    --astro-code-token-keyword: var(--color-gray-12);
+    --astro-code-token-parameter: var(--color-gray-11);
+    --astro-code-token-function: var(--color-gray-12);
+    --astro-code-token-string-expression: var(--color-gray-11);
+    --astro-code-token-punctuation: var(--color-gray-11);
+    --astro-code-token-link: var(--color-gray-11);
+  }
+
+  .astro-code {
+    @apply p-4 rounded;
+  }
+</style>
