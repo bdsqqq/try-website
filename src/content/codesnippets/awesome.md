@@ -1,21 +1,21 @@
 ```js
 async function awesome(){
-   const [aData, error] = await tryCatch(step1());
-   const [bData, error] = await tryCatch(step2(aData));
-   const [cData, error] = await tryCatch(step3(bData));
+   const [aData, aError] = await tryCatch(step1());
+   const [bData, bError] = await tryCatch(step2(aData));
+   const [cData, cError] = await tryCatch(step3(bData));
 
    // ...
 }
 
 async function awesomeButHandleErrors() {
-   const [aData, error] = await tryCatch(step1());
-   if(error) // ...
+   const [aData, aError] = await tryCatch(step1());
+   if(aError) // ...
 
-   const [bData, error2] = await tryCatch(step2(aData));
-   if(error2) // ...
+   const [bData, bError] = await tryCatch(step2(aData));
+   if(bError) // ...
 
-   const [cData, error3] = await tryCatch(step3(bData));
-   if(error3) // ...
+   const [cData, cError] = await tryCatch(step3(bData));
+   if(cError) // ...
 
    // ...
 }
