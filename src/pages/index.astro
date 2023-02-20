@@ -11,8 +11,15 @@ const focusStyles = `
   !outline-none focus-visible:ring-1 ring-offset-8 ring-gray-A10 ring-offset-gray-0
 `;
 
+const pyramid = await getEntryBySlug("codesnippets", "pyramid-of-hell");
+const heaven = await getEntryBySlug("codesnippets", "heaven-one-liners");
 const terror = await getEntryBySlug("codesnippets", "tower-of-terror");
-const { Content } = await terror.render();
+const awesome = await getEntryBySlug("codesnippets", "awesome");
+
+const { Content: Pyramid } = await pyramid.render();
+const { Content: Heaven } = await heaven.render();
+const { Content: Terror } = await terror.render();
+const { Content: Awesome } = await awesome.render();
 ---
 
 <html lang="en">
@@ -24,15 +31,15 @@ const { Content } = await terror.render();
     <title>Try - a</title>
   </head>
   <body
-    class="h-screen bg-black text-gray-A11 selection:bg-gray-A11 selection:text-gray-2"
+    class="min-h-screen bg-black text-gray-A11 selection:bg-gray-A11 selection:text-gray-2"
   >
-    <main
-      class="h-full flex flex-col items-center justify-between p-6 sm:pt-32"
+    <div
+      class="h-full flex flex-col items-center justify-between gap-8 p-6 sm:pt-24"
     >
-      <div
-        class="max-w-3xl mx-auto flex flex-col justify-center items-center relative"
+      <main
+        class="max-w-3xl mx-auto flex flex-col justify-center items-center relative space-y-4"
       >
-        <div class="mt- max-w-2xl text-left space-y-2">
+        <div class="max-w-2xl text-left space-y-2">
           <div class="flex justify-between items-end">
             <div>
               <Glitch text="v1.1" />
@@ -72,17 +79,68 @@ const { Content } = await terror.render();
               </div>
             </div>
           </div>
-          <div class="">
+          <div>
             <span>
               Don't let the Try Catch Tower of Terror destroy your beautiful one
               liners.
             </span>
           </div>
-          <div class="">
-            <Content />
+        </div>
+
+        <div class="w-full mx-auto space-y-4">
+          <div class="max-w-lg mx-auto">
+            <p>
+              <span
+                >Long ago, our asyncronous code built the pyramids of hell.</span
+              >
+              <span>
+                The heavenly one-liners destroyed those monuments and saved our
+                sanity.
+              </span>
+              <span>
+                But our responsibility to catch errors turned heaven into the
+                try-catch tower of terror.
+              </span>
+              <span>
+                Try™ gives you a taste of heaven without compromising
+                functionality. (typesafelly, of course.)
+              </span>
+            </p>
+          </div>
+
+          <div class="w-full overflow-x-visible">
+            <div class="flex group pointer-events-none">
+              <div
+                tabindex="0"
+                class="code-card transform group-hover:opacity-75 group-focus-within:opacity-75 group-focus-within:blur-sm group-hover:blur-sm focus:!blur-none hover:!blur-none filter focus:!opacity-100 hover:!opacity-100 pointer-events-auto h-fit w-96 [&:not(:first-child)]:-ml-48 transition-all"
+              >
+                <Pyramid />
+              </div>
+
+              <div
+                tabindex="0"
+                class="code-card transform group-hover:opacity-75 group-focus-within:opacity-75 group-focus-within:blur-sm group-hover:blur-sm focus:!blur-none hover:!blur-none filter focus:!opacity-100 hover:!opacity-100 pointer-events-auto h-fit w-96 [&:not(:first-child)]:-ml-48 transition-all"
+              >
+                <Heaven />
+              </div>
+
+              <div
+                tabindex="0"
+                class="code-card transform group-hover:opacity-75 group-focus-within:opacity-75 group-focus-within:blur-sm group-hover:blur-sm focus:!blur-none hover:!blur-none filter focus:!opacity-100 hover:!opacity-100 pointer-events-auto h-fit w-96 [&:not(:first-child)]:-ml-48 transition-all"
+              >
+                <Terror />
+              </div>
+
+              <div
+                tabindex="0"
+                class="code-card transform group-hover:opacity-75 group-focus-within:opacity-75 group-focus-within:blur-sm group-hover:blur-sm focus:!blur-none hover:!blur-none filter focus:!opacity-100 hover:!opacity-100 pointer-events-auto h-fit w-96 [&:not(:first-child)]:-ml-48 transition-all"
+              >
+                <Awesome />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </main>
       <footer class="">
         Made by <a
           class={clsx(
@@ -104,7 +162,7 @@ const { Content } = await terror.render();
           ><FireshipLogo className="inline-block w-4 h-4 rounded-full" /> Fireship</a
         >
       </footer>
-    </main>
+    </div>
   </body>
 </html>
 <script>
@@ -131,6 +189,13 @@ const { Content } = await terror.render();
   }
 
   .astro-code {
-    @apply p-4 rounded;
+    @apply p-4 rounded shadow-lg shadow-gray-A2 border border-gray-A5;
+  }
+
+  .code-card:hover ~ .code-card {
+    @apply translate-x-52;
+  }
+  .code-card:focus-within ~ .code-card {
+    @apply translate-x-52;
   }
 </style>
