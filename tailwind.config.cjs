@@ -36,7 +36,12 @@ module.exports = {
       white: "hsl(0 0% 100%)",
       black: "hsl(0 0% 0%)",
     },
-    extend: {},
+    extend: {
+      boxShadow: {
+        "lg-up":
+          "0 -10px 15px -3px var(--tw-shadow-color), 0 -4px 6px -4px var(--tw-shadow-color)",
+      },
+    },
   },
   plugins: [
     function ({ addBase, theme }) {
