@@ -26,24 +26,51 @@ const { Content: Awesome } = await awesome.render();
   <head>
     <meta charset="utf-8" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
-    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000">
-    <link rel="shortcut icon" href="/favicon/favicon.ico">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/favicon/safari-pinned-tab.svg"
+      color="#000000"
+    />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
 
-    <meta name="description" content={"Don't let the Try Catch Tower of Terror destroy your beautiful one liners."} />
-    
-    <meta property="og:title" content={"Try — Heavenly syntax without compromises"} />
-    <meta property="og:description" content={"Don't let the Try Catch Tower of Terror destroy your beautiful one liners."} />
+    <meta
+      name="description"
+      content={"Don't let the Try Catch Tower of Terror destroy your beautiful one liners."}
+    />
+
+    <meta
+      property="og:title"
+      content={"Try — Heavenly syntax without compromises"}
+    />
+    <meta
+      property="og:description"
+      content={"Don't let the Try Catch Tower of Terror destroy your beautiful one liners."}
+    />
     <meta property="og:image" content="/og.jpg" />
     <meta name="twitter:image" content="/og.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
-    
+
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Try — Heavenly syntax without compromises</title>
@@ -72,7 +99,9 @@ const { Content: Awesome } = await awesome.render();
 
                 <div>
                   <div class="flex flex-col gap-2 items-end">
-                    <CopyButton />
+                    <div class="hidden md:block">
+                      <CopyButton />
+                    </div>
                     <a
                       class={clsx(
                         "flex items-center gap-2 hover:text-gray-12 transition-colors focus:text-gray-12 rounded",
@@ -106,8 +135,12 @@ const { Content: Awesome } = await awesome.render();
           <div class="mx-auto max-lg:sticky top-0 z-10">
             <div class="bg-black max-lg:pt-4 w-full">
               <p class="max-w-xl mx-auto">
-                <span class="story transition-colors">Async-await feels like heaven</span>
-                <span class="story transition-colors"> because it avoids callback hell.</span>
+                <span class="story transition-colors"
+                  >Async-await feels like heaven</span
+                >
+                <span class="story transition-colors">
+                  because it avoids callback hell.</span
+                >
                 <span class="story transition-colors">
                   But our responsibility to catch errors turned heaven into the
                   try-catch tower of terror.
@@ -201,27 +234,35 @@ const { Content: Awesome } = await awesome.render();
 
   codeSnippetsArray.forEach((el, i) => {
     el.addEventListener("focus", () => {
-      storyBits.filter((_, j) => j !== i).forEach(el => {
-        el.classList.add("text-gray-8")
-      });
+      storyBits
+        .filter((_, j) => j !== i)
+        .forEach((el) => {
+          el.classList.add("text-gray-8");
+        });
       storyBits[i]?.classList.add("text-gray-12");
     });
     el.addEventListener("blur", () => {
-      storyBits.filter((_, j) => j !== i).forEach(el => {
-        el.classList.remove("text-gray-8")
-      });
+      storyBits
+        .filter((_, j) => j !== i)
+        .forEach((el) => {
+          el.classList.remove("text-gray-8");
+        });
       storyBits[i]?.classList.remove("text-gray-12");
     });
     el.addEventListener("mouseover", () => {
-      storyBits.filter((_, j) => j !== i).forEach(el => {
-        el.classList.add("text-gray-8")
-      });
+      storyBits
+        .filter((_, j) => j !== i)
+        .forEach((el) => {
+          el.classList.add("text-gray-8");
+        });
       storyBits[i]?.classList.add("text-gray-12");
     });
     el.addEventListener("mouseleave", () => {
-      storyBits.filter((_, j) => j !== i).forEach(el => {
-        el.classList.remove("text-gray-8")
-      });
+      storyBits
+        .filter((_, j) => j !== i)
+        .forEach((el) => {
+          el.classList.remove("text-gray-8");
+        });
       storyBits[i]?.classList.remove("text-gray-12");
     });
   });
