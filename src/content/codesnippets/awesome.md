@@ -1,12 +1,14 @@
 ```js
+import { trytm } from "@bdsqqq/try"
+
 async function awesome() {
-   const [aData, aError] = await tryCatch(step1());
+   const [aData, aError] = await trytm(step1());
    if(aError) // ...
 
-   const [bData, bError] = await tryCatch(step2(aData));
+   const [bData, bError] = await trytm(step2(aData));
    if(bError) // ...
 
-   const [cData, cError] = await tryCatch(step3(bData));
+   const [cData, cError] = await trytm(step3(bData));
    if(cError) // ...
 
    // ...
