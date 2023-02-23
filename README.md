@@ -4,6 +4,8 @@ Minimal, yet overengineered, site for the @bdsqqq/try library.
 
 # Screenshots
 
+https://user-images.githubusercontent.com/37847523/220816795-b243f581-161d-482f-9c55-367bd539d84b.mp4
+
 # Attributions
 
 - The lib itself is an implementation of a solution discussed in a [fireship video](https://www.youtube.com/watch?v=ITogH7lJTyE);
