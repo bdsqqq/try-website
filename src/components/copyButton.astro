@@ -4,11 +4,10 @@ import { clsx } from "clsx";
 
 import { focusStyles } from "../pages/index.astro";
 
-const { class: classes } = Astro.props
+const { class: classes } = Astro.props;
 ---
 
 <button
-  id="copy"
   class={clsx(
     "cursor-copy bg-gradient-to-t from-gray-A3 to-gray-A5 p-2 rounded flex justify-between items-center gap-2 select-text hover:bg-gray-A2 transition-all hover:text-gray-12 hover:shadow-lg shadow-white active:scale-[98%] focus:text-gray-12",
     focusStyles,
