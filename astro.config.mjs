@@ -1,8 +1,5 @@
 import { defineConfig } from "astro/config";
 
-// https://astro.build/config
-import tailwind from "@astrojs/tailwind";
-
 export default defineConfig({
   output: "static",
   markdown: {
@@ -11,5 +8,4 @@ export default defineConfig({
       wrap: false,
     },
   },
-  integrations: [tailwind()],
 });
